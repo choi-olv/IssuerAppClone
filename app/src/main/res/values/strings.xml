@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">vpass-clone</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="top_lable_pay_amount">お支払い金額</string>
+
+    <string name="top_menu_point">ポイント</string>
+    <string name="top_menu_available_amount">ご利用可能額</string>
+    <string name="top_menu_change_pay_amount">お支払額変更</string>
+    <string name="top_menu_check_other_month">他の月を見る</string>
+
+    <string name="bottom_menu_home">ホーム</string>
+    <string name="bottom_menu_deal">お得情報</string>
+    <string name="bottom_menu_household">家計管理</string>
+    <string name="bottom_menu_menu">メニュー</string>
+</resources>
