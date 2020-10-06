@@ -1,4 +1,4 @@
-package jp.co.olivier.choi.vpass_clone;
+package jp.co.olv.choi.issuer_app_clone;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("jp.co.olivier.choi.vpass_clone", appContext.getPackageName());
+        assertEquals("jp.co.olv.choi.issuer_app_clone", appContext.getPackageName());
     }
 }

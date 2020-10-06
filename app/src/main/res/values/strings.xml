@@ -1,9 +1,5 @@
 <resources>
-    <string name="app_name">vpass-clone</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">issuer-app-clone</string>
 
     <string name="top_lable_pay_amount">お支払い金額</string>
 

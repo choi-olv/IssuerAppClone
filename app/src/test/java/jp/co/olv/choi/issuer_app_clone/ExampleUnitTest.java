@@ -1,4 +1,4 @@
-package jp.co.olivier.choi.vpass_clone;
+package jp.co.olv.choi.issuer_app_clone;
 
 import org.junit.Test;
 
