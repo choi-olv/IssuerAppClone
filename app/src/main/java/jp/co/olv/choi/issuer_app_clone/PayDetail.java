@@ -1,7 +1,5 @@
 package jp.co.olv.choi.issuer_app_clone;
 
-import java.util.Date;
-
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 import lombok.Getter;
@@ -14,13 +12,13 @@ public class PayDetail extends RealmObject {
     private Integer id;
     private String shopName;
     private String amount;
-    private Date payDate;
-    private Integer payCount;
+    private String payDate;
+    private String payCount;
 
     public PayDetail() {
     }
 
-    public PayDetail(Integer id, String shopName, String amount, Date payDate, Integer payCount) {
+    public PayDetail(Integer id, String shopName, String amount, String payDate, String payCount) {
         this.id = id;
         this.shopName = shopName;
         this.amount = amount;
