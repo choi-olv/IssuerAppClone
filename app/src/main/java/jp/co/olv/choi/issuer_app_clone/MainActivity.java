@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.realm.DynamicRealm;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -26,6 +24,9 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.detail_list)
+    ListView listView;
+
     @SneakyThrows
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Realm初期化
         Realm.init(this);
         setContentView(jp.co.olv.choi.issuer_app_clone.R.layout.activity_main);
+        ButterKnife.bind(this);
 
         final List<commentsResponse> responses = (List<commentsResponse>) new RestApiTask().execute().get();
 
@@ -55,22 +57,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList detailList = new ArrayList<Map<String, String>>();
+        DetailListAdapter detailAdapter = new DetailListAdapter();
+
         RealmResults<PayDetail> payDetails = realm.where(PayDetail.class).findAll();
         for (int i = 0; i < payDetails.size(); i++) {
             PayDetail payDetail = payDetails.get(i);
-            Map<String, String> item = new HashMap<String, String>();
-            item.put("FirstLine", payDetail.getShopName() + "                                                        " + payDetail.getAmount());
-            item.put("SecondLine", payDetail.getPayDate() + "                                                 " + payDetail.getPayCount());
-            detailList.add(item);
+            detailAdapter.addItem(payDetail);
         }
 
-        SimpleAdapter detailAdapter = new SimpleAdapter(this, detailList,
-                android.R.layout.simple_list_item_2,
-                new String[]{"FirstLine", "SecondLine"},
-                new int[]{android.R.id.text1, android.R.id.text2});
-
-        ListView listView = (ListView) findViewById(R.id.detail_list);
         listView.setAdapter(detailAdapter);
 
         // Realm終了

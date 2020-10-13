@@ -20,7 +20,7 @@ public class HttpClient {
             .build();
 
     private static final Gson gson = new GsonBuilder()
-            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+            .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
             .create();
 
     public static RequestApiService getRequestApiService() {

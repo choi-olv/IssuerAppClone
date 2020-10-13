@@ -18,6 +18,14 @@ public class PayDetail extends RealmObject {
     public PayDetail() {
     }
 
+    public PayDetail(String shopName, String amount, String payDate, String payCount) {
+        this.id = null;
+        this.shopName = shopName;
+        this.amount = amount;
+        this.payDate = payDate;
+        this.payCount = payCount;
+    }
+
     public PayDetail(Integer id, String shopName, String amount, String payDate, String payCount) {
         this.id = id;
         this.shopName = shopName;
