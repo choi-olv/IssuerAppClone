@@ -54,7 +54,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/top_menu_change_pay_amount" />
-10                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    022
+
                 <Button
                     android:id="@+id/top_menu_button4"
                     style="@style/Widget.AppCompat.Button.Borderless"
