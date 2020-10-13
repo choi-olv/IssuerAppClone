@@ -1,26 +1,19 @@
 package jp.co.olv.choi.issuer_app_clone;
 
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ListView;
 
-import java.io.IOException;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.realm.DynamicRealm;
+import butterknife.OnItemClick;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmMigration;
 import io.realm.RealmResults;
-import io.realm.RealmSchema;
 import lombok.SneakyThrows;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,53 +63,9 @@ public class MainActivity extends AppCompatActivity {
         // Realm終了
         realm.close();
     }
-}
 
-class RestApiTask extends AsyncTask {
-
-    @Override
-    protected List<commentsResponse> doInBackground(Object[] objects){
-        RequestApiService apiService = HttpClient.getRequestApiService();
-        Integer postId = 2;
-
-        apiService.getCommentsByPostId(postId).enqueue(new Callback<List<commentsResponse>>() {
-            @Override
-            public void onResponse(Call<List<commentsResponse>> call, Response<List<commentsResponse>> response) {
-                if (response.isSuccessful()) {
-                    Log.d("succeeded", response.toString());
-                } else {
-                    Log.e("failed", response.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<commentsResponse>> call, Throwable t) {
-            }
-        });
-
-        try {
-            return apiService.getCommentsByPostId(postId).execute().body();
-        } catch (IOException e) {
-        }
-        return null;
-    }
-}
-
-class MyMigration implements RealmMigration {
-    @Override
-    public void migrate(DynamicRealm realm, long oldVersion, long newVersion) {
-
-        RealmSchema schema = realm.getSchema();
-
-        if (oldVersion <= 3) {
-            schema.get("PayDetail")
-                    .removeField("amount")
-                    .removeField("payDate")
-                    .removeField("payCount")
-                    .addField("amount", String.class)
-                    .addField("payDate", String.class)
-                    .addField("payCount", String.class);
-            oldVersion++;
-        }
+    @OnItemClick(R.id.detail_list) void clickDetailList(){
+        Intent intent = new Intent(getApplication(), DetailActivity.class);
+        startActivity(intent);
     }
 }

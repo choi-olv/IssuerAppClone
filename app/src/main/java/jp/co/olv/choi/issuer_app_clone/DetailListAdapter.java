@@ -42,9 +42,9 @@ public class DetailListAdapter extends BaseAdapter {
         PayDetail payDetail = detailListItems.get(position);
 
         shopNameView.setText(payDetail.getShopName());
-        amountView.setText(payDetail.getAmount());
+        amountView.setText(payDetail.getAmount() + "円");
         payDateView.setText(payDetail.getPayDate());
-        payCountView.setText(payDetail.getPayCount());
+        payCountView.setText(payDetail.getPayCount() + "回払い");
 
         return convertView;
     }

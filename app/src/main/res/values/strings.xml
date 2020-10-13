@@ -8,10 +8,10 @@
     <string name="top_menu_change_pay_amount">お支払額変更</string>
     <string name="top_menu_check_other_month">他の月を見る</string>
 
-    <string name="dedail_list_shop_name">店名</string>
-    <string name="dedail_list_amount">金額</string>
-    <string name="dedail_list_pay_date">支払日</string>
-    <string name="dedail_list_pay_count">支払回数</string>
+    <string name="detail_list_shop_name">店名</string>
+    <string name="detail_list_amount">金額</string>
+    <string name="detail_list_pay_date">支払日</string>
+    <string name="detail_list_pay_count">支払回数</string>
 
     <string name="bottom_menu_home">ホーム</string>
     <string name="bottom_menu_deal">お得情報</string>

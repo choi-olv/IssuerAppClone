@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DetailActivity">
 
     <LinearLayout
         android:id="@+id/main_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -25,8 +25,7 @@
                 android:layout_height="wrap_content"
                 android:background="#39826e"
                 android:text="@string/top_lable_pay_amount"
-                android:textColor="#ffffff"
-                android:textSize="18sp" />
+                android:textColor="#ffffff" />
 
             <LinearLayout
                 android:id="@+id/top_menu_layout"
@@ -42,8 +41,7 @@
                     android:layout_weight="1"
                     android:background="#dbf0e7"
                     android:text="@string/top_menu_point"
-                    android:textColor="#427b6c"
-                    android:textSize="12sp" />
+                    android:textColor="#427b6c" />
 
                 <Button
                     android:id="@+id/top_menu_button2"
@@ -53,8 +51,7 @@
                     android:layout_weight="1"
                     android:background="#dbf0e7"
                     android:text="@string/top_menu_available_amount"
-                    android:textColor="#427b6c"
-                    android:textSize="12sp" />
+                    android:textColor="#427b6c" />
 
                 <Button
                     android:id="@+id/top_menu_button3"
@@ -64,8 +61,7 @@
                     android:layout_weight="1"
                     android:background="#dbf0e7"
                     android:text="@string/top_menu_change_pay_amount"
-                    android:textColor="#427b6c"
-                    android:textSize="12sp" />
+                    android:textColor="#427b6c" />
 
                 <Button
                     android:id="@+id/top_menu_button4"
@@ -75,17 +71,51 @@
                     android:layout_weight="1"
                     android:background="#dbf0e7"
                     android:text="@string/top_menu_check_other_month"
-                    android:textColor="#427b6c"
-                    android:textSize="12sp" />
+                    android:textColor="#427b6c" />
             </LinearLayout>
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/detail_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/dedail_list_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_list_shop_name"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </ListView>
+        <TextView
+            android:id="@+id/dedail_list_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_list_amount"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dedail_list_pay_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_list_pay_date"
+            android:textAllCaps="false"
+            android:textColor="#6f6f6f"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/dedail_list_pay_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_list_pay_count"
+            android:textAllCaps="false"
+            android:textColor="#6f6f6f"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <LinearLayout
             android:id="@+id/bottom_layout"
@@ -101,8 +131,7 @@
                 android:layout_weight="1"
                 android:background="#fefefe"
                 android:text="@string/bottom_menu_deal"
-                android:textColor="#4e766b"
-                android:textSize="12sp" />
+                android:textColor="#4e766b" />
 
             <Button
                 android:id="@+id/bottom_menu_button4"
@@ -112,8 +141,7 @@
                 android:layout_weight="1"
                 android:background="#fefefe"
                 android:text="@string/bottom_menu_menu"
-                android:textColor="#8d8d8d"
-                android:textSize="12sp" />
+                android:textColor="#8d8d8d" />
 
             <Button
                 android:id="@+id/bottom_menu_button3"
@@ -123,8 +151,7 @@
                 android:layout_weight="1"
                 android:background="#fefefe"
                 android:text="@string/bottom_menu_household"
-                android:textColor="#8d8d8d"
-                android:textSize="12sp" />
+                android:textColor="#8d8d8d" />
 
             <Button
                 android:id="@+id/bottom_menu_button1"
@@ -134,8 +161,7 @@
                 android:layout_weight="1"
                 android:background="#fefefe"
                 android:text="@string/bottom_menu_home"
-                android:textColor="#8d8d8d"
-                android:textSize="12sp" />
+                android:textColor="#8d8d8d" />
         </LinearLayout>
 
     </LinearLayout>

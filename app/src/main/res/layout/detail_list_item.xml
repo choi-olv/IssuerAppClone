@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dedail_list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="41dp"
@@ -11,8 +12,9 @@
         android:id="@+id/dedail_list_shop_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dedail_list_shop_name"
+        android:text="@string/detail_list_shop_name"
         android:textColor="@android:color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,8 +22,9 @@
         android:id="@+id/dedail_list_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dedail_list_amount"
+        android:text="@string/detail_list_amount"
         android:textColor="@android:color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,9 +32,9 @@
         android:id="@+id/dedail_list_pay_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dedail_list_pay_date"
+        android:text="@string/detail_list_pay_date"
         android:textAllCaps="false"
-        android:textColor="@android:color/black"
+        android:textColor="#6f6f6f"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -40,9 +43,9 @@
         android:id="@+id/dedail_list_pay_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dedail_list_pay_count"
+        android:text="@string/detail_list_pay_count"
         android:textAllCaps="false"
-        android:textColor="@android:color/black"
+        android:textColor="#6f6f6f"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
