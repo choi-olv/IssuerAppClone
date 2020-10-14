@@ -11,32 +11,26 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 import lombok.SneakyThrows;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String DETAIL_LIST_POSITION = "jp.co.olv.choi.issuer_app_clone.DETAIL_LIST_POSITION";
+
     @BindView(R.id.detail_list)
-    ListView listView;
+    ListView detailListView;
 
     @SneakyThrows
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Realm初期化
-        Realm.init(this);
-        setContentView(jp.co.olv.choi.issuer_app_clone.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        MyApplication myApp = (MyApplication) this.getApplication();
+        Realm realm = myApp.getRealm();
 
         final List<commentsResponse> responses = (List<commentsResponse>) new RestApiTask().execute().get();
-
-        // カラムの型を変えたのでマイグレーションする
-        RealmConfiguration config = new RealmConfiguration.Builder()
-                .schemaVersion(4)
-                .migration(new MyMigration())
-                .build();
-        final Realm realm = Realm.getInstance(config);
 
         realm.executeTransaction(new Realm.Transaction() {
             @Override
@@ -50,22 +44,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        DetailListAdapter detailAdapter = new DetailListAdapter();
+        RealmResults<PayDetail> payDetailsFromRealm = realm.where(PayDetail.class).findAll();
+        myApp.setPayDetails(payDetailsFromRealm);
 
-        RealmResults<PayDetail> payDetails = realm.where(PayDetail.class).findAll();
-        for (int i = 0; i < payDetails.size(); i++) {
-            PayDetail payDetail = payDetails.get(i);
+        DetailListAdapter detailAdapter = new DetailListAdapter();
+        RealmResults<PayDetail> payDetailsFromApp =  myApp.getPayDetails();
+        for (int i = 0; i < payDetailsFromApp.size(); i++) {
+            PayDetail payDetail = payDetailsFromApp.get(i);
             detailAdapter.addItem(payDetail);
         }
 
-        listView.setAdapter(detailAdapter);
-
-        // Realm終了
-        realm.close();
+        detailListView.setAdapter(detailAdapter);
     }
 
-    @OnItemClick(R.id.detail_list) void clickDetailList(){
+    @OnItemClick(R.id.detail_list) void clickDetailList(int position){
         Intent intent = new Intent(getApplication(), DetailActivity.class);
+        intent.putExtra(DETAIL_LIST_POSITION, position);
         startActivity(intent);
     }
 }

@@ -14,13 +14,13 @@ import butterknife.ButterKnife;
 
 public class DetailListAdapter extends BaseAdapter {
 
-    @BindView(R.id.dedail_list_shop_name)
+    @BindView(R.id.detail_item_shop_name)
     TextView shopNameView;
-    @BindView(R.id.dedail_list_amount)
+    @BindView(R.id.detail_item_amount)
     TextView amountView;
-    @BindView(R.id.dedail_list_pay_date)
+    @BindView(R.id.detail_item_pay_date)
     TextView payDateView;
-    @BindView(R.id.dedail_list_pay_count)
+    @BindView(R.id.detail_item_pay_count)
     TextView payCountView;
 
     private ArrayList<PayDetail> detailListItems = new ArrayList<PayDetail>() ;
@@ -30,7 +30,6 @@ public class DetailListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
         final Context context = parent.getContext();
 
         if (convertView == null) {

@@ -2,14 +2,14 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dedail_list_item"
+    android:id="@+id/detail_list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="41dp"
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
-        android:id="@+id/dedail_list_shop_name"
+        android:id="@+id/detail_item_shop_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_list_shop_name"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dedail_list_amount"
+        android:id="@+id/detail_item_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_list_amount"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dedail_list_pay_date"
+        android:id="@+id/detail_item_pay_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_list_pay_date"
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/dedail_list_pay_count"
+        android:id="@+id/detail_item_pay_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_list_pay_count"

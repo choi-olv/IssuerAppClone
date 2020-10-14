@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#39826e"
-                android:text="@string/top_lable_pay_amount"
+                android:text="@string/top_lable_card_name"
                 android:textColor="#ffffff"
                 android:textSize="18sp" />
 
@@ -94,6 +94,17 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/bottom_menu_button1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fefefe"
+                android:text="@string/bottom_menu_home"
+                android:textColor="#8d8d8d"
+                android:textSize="12sp" />
+
+            <Button
                 android:id="@+id/bottom_menu_button2"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
@@ -102,17 +113,6 @@
                 android:background="#fefefe"
                 android:text="@string/bottom_menu_deal"
                 android:textColor="#4e766b"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/bottom_menu_button4"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#fefefe"
-                android:text="@string/bottom_menu_menu"
-                android:textColor="#8d8d8d"
                 android:textSize="12sp" />
 
             <Button
@@ -127,13 +127,13 @@
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/bottom_menu_button1"
+                android:id="@+id/bottom_menu_button4"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#fefefe"
-                android:text="@string/bottom_menu_home"
+                android:text="@string/bottom_menu_menu"
                 android:textColor="#8d8d8d"
                 android:textSize="12sp" />
         </LinearLayout>

@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">issuer-app-clone</string>
 
-    <string name="top_lable_pay_amount">お支払い金額</string>
+    <string name="top_lable_card_name">AMAZONゴールド</string>
+    <string name="top_lable_pay_detail">支払詳細</string>
 
     <string name="top_menu_point">ポイント</string>
     <string name="top_menu_available_amount">ご利用可能額</string>
     <string name="top_menu_change_pay_amount">お支払額変更</string>
     <string name="top_menu_check_other_month">他の月を見る</string>
+    <string name="top_menu_return_to_list">一覧に戻る</string>
 
     <string name="detail_list_shop_name">店名</string>
     <string name="detail_list_amount">金額</string>
